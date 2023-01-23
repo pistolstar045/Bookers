@@ -1,0 +1,64 @@
+<body>
+  <style type="text/css">
+    body {font-family: verdana, arial, helvetica, sans-serif;
+          font-size: 13px;
+          line-height: 18px;
+          margin: 33px;
+    }
+
+    p {margin: 33px;
+
+    }
+
+
+    ul  {padding-left: 0px;
+
+    }
+
+    ul li {display: inline-block;}
+
+    li:not(:first-child)::before {content: "｜";
+
+    }
+
+  </style>
+
+ <% if flash[:notice] %>
+ <p id="notice">
+   <%= flash[:notice] %>
+ </p>
+ <% end %>
+
+ <p>
+   <strong>Title:</strong>
+   <%= @book.title %>
+ </p>
+
+ <p>
+   <strong>Body:</strong>
+   <%= @book.body %>
+ </p>
+
+ <ul>
+  <li><%= link_to "Edit",edit_book_path(@book.id) %></li>
+  <li><%= link_to "Back","/books" %></li>
+ </ul>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
